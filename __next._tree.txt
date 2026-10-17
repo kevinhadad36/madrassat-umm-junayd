@@ -1,3 +1,3 @@
-:HL["/madrassat-umm-junayd/_next/static/css/de98fd05b601d253.css","style"]
+:HL["/madrassat-umm-junayd/_next/static/css/ea1efe86072a15bb.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@500;600;700&display=swap","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"YIjp9uf4j_QzGT943JsC7"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"WV7i7KM2i5L2VFSSxrJzp"}
