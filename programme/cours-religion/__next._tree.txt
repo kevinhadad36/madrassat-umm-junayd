@@ -1,3 +1,5 @@
 :HL["/madrassat-umm-junayd/_next/static/css/8f6f257dc18045d7.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@500;600;700&display=swap","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"programme","param":null,"prefetchHints":4192,"slots":{"children":{"name":"cours-religion","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"ypGbNG_B4iw0oALLd7BvL"}
+:HL["/madrassat-umm-junayd/illustrations/cours-enfants-fiche.webp","image"]
+:HL["/madrassat-umm-junayd/illustrations/cours-enfants-bulle.webp","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"programme","param":null,"prefetchHints":4192,"slots":{"children":{"name":"cours-religion","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"5EMMDCS5lX42nBddgDyUC"}
