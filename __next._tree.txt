@@ -17,4 +17,4 @@
 :HL["/madrassat-umm-junayd/illustrations/conseils-fille-ampoule.webp","image"]
 :HL["/madrassat-umm-junayd/illustrations/cours-enfants-fiche.webp","image"]
 :HL["/madrassat-umm-junayd/illustrations/cours-enfants-bulle.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"IunVyyh8-zDWmKl9UcmV5"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"tD4r3BI7s9Euogc1oRQhP"}
