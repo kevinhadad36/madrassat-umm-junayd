@@ -1,6 +1,6 @@
-:HL["/madrassat-umm-junayd/_next/static/css/a6ec96954ad15228.css","style"]
+:HL["/madrassat-umm-junayd/_next/static/css/e6e25e22c8922220.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@500;600;700&display=swap","style"]
 :HL["/madrassat-umm-junayd/illustrations/lecture-fatha.webp","image"]
 :HL["/madrassat-umm-junayd/illustrations/lecture-kasra.webp","image"]
 :HL["/madrassat-umm-junayd/illustrations/lecture-damma.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"programme","param":null,"prefetchHints":4192,"slots":{"children":{"name":"lecture","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"R6toD3gQFlExTQIa7qdnR"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"programme","param":null,"prefetchHints":4192,"slots":{"children":{"name":"lecture","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"N7O7UoLNN6mIvhcvLtS_z"}
