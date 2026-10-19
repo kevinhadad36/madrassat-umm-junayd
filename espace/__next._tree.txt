@@ -10,4 +10,8 @@
 :HL["/madrassat-umm-junayd/illustrations/conseils-fille-ampoule.webp","image"]
 :HL["/madrassat-umm-junayd/illustrations/cours-enfants-fiche.webp","image"]
 :HL["/madrassat-umm-junayd/illustrations/cours-enfants-bulle.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"espace","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"gOvN0zCTDblAAcHRLZ7bc"}
+:HL["/madrassat-umm-junayd/illustrations/jeux-fille-rayons.webp","image"]
+:HL["/madrassat-umm-junayd/illustrations/jeux-fille-etoile-1.webp","image"]
+:HL["/madrassat-umm-junayd/illustrations/jeux-fille-etoile-2.webp","image"]
+:HL["/madrassat-umm-junayd/illustrations/jeux-fille-etoile-3.webp","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"espace","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"t18j-LcIih3E5GTOAF87d"}
