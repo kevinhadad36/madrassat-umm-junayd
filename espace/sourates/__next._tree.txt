@@ -1,7 +1,7 @@
-:HL["/madrassat-umm-junayd/_next/static/css/29c050dfa6088767.css","style"]
+:HL["/madrassat-umm-junayd/_next/static/css/9da461272d39a6c4.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@500;600;700&display=swap","style"]
 :HL["/madrassat-umm-junayd/illustrations/sourates-qul.webp","image"]
 :HL["/madrassat-umm-junayd/illustrations/sourates-huwa.webp","image"]
 :HL["/madrassat-umm-junayd/illustrations/sourates-allah.webp","image"]
 :HL["/madrassat-umm-junayd/illustrations/sourates-ahad.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"espace","param":null,"prefetchHints":4192,"slots":{"children":{"name":"sourates","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"vHPvUF-GsD7cq0VyVgnTm"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"espace","param":null,"prefetchHints":4192,"slots":{"children":{"name":"sourates","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"tukM8pFHyMQNntXIPjUqj"}
