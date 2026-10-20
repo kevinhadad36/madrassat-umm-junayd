@@ -1,4 +1,4 @@
-:HL["/madrassat-umm-junayd/_next/static/css/0b6eaee39f8183db.css","style"]
+:HL["/madrassat-umm-junayd/_next/static/css/c91c0133f939374c.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@500;600;700&display=swap","style"]
 :HL["/madrassat-umm-junayd/illustrations/tuile-ta.webp","image"]
 :HL["/madrassat-umm-junayd/illustrations/tuile-ba.webp","image"]
@@ -25,4 +25,4 @@
 :HL["/madrassat-umm-junayd/illustrations/suivi-garcon-rayons-gauche.webp","image"]
 :HL["/madrassat-umm-junayd/illustrations/suivi-garcon-etincelles.webp","image"]
 :HL["/madrassat-umm-junayd/illustrations/conseils-fille-ampoule.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"I3QSHVVp4vSxGpB0qLT6M"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"MLl3T_yVmOC4_A3tVhXuF"}
