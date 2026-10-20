@@ -3,4 +3,4 @@
 :HL["/madrassat-umm-junayd/illustrations/lecture-fatha.webp","image"]
 :HL["/madrassat-umm-junayd/illustrations/lecture-kasra.webp","image"]
 :HL["/madrassat-umm-junayd/illustrations/lecture-damma.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"espace","param":null,"prefetchHints":4192,"slots":{"children":{"name":"lecture","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"Tw9NpdTucUV-92XW3h9rZ"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"espace","param":null,"prefetchHints":4192,"slots":{"children":{"name":"lecture","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"FU4E5TBfE6_XPDYsa1E0K"}
