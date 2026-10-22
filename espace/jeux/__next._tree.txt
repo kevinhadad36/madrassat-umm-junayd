@@ -13,4 +13,4 @@
 :HL["/madrassat-umm-junayd/illustrations/jeux-fille-etoile-1.webp","image"]
 :HL["/madrassat-umm-junayd/illustrations/jeux-fille-etoile-2.webp","image"]
 :HL["/madrassat-umm-junayd/illustrations/jeux-fille-etoile-3.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"espace","param":null,"prefetchHints":4192,"slots":{"children":{"name":"jeux","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"2t3DS5ePsobj3Au4j5ExW"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"espace","param":null,"prefetchHints":4192,"slots":{"children":{"name":"jeux","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"dyzSHFhMReiseWTXXGfwn"}
