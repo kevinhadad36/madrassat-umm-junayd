@@ -1,3 +1,3 @@
-:HL["/madrassat-umm-junayd/_next/static/css/f38ede3448c37120.css","style"]
+:HL["/madrassat-umm-junayd/_next/static/css/a58709c513bfc355.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@500;600;700&display=swap","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"espace","param":null,"prefetchHints":4192,"slots":{"children":{"name":"jeux","param":null,"prefetchHints":4192,"slots":{"children":{"name":"ballons","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}}}},"staleTime":300,"buildId":"bOeNFjRK-56nXCP9LQS5G"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"espace","param":null,"prefetchHints":4192,"slots":{"children":{"name":"jeux","param":null,"prefetchHints":4192,"slots":{"children":{"name":"ballons","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}}}},"staleTime":300,"buildId":"nrINlwYdTeH0lKjZTz8Ng"}
