@@ -1,3 +1,3 @@
-:HL["/madrassat-umm-junayd/_next/static/css/fdf933f7b25a40e1.css","style"]
+:HL["/madrassat-umm-junayd/_next/static/css/5b84ed73b9ce668c.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@500;600;700&display=swap","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"espace","param":null,"prefetchHints":4192,"slots":{"children":{"name":"lecture","param":null,"prefetchHints":4192,"slots":{"children":{"name":"coran","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}}}},"staleTime":300,"buildId":"i8WSprfr1OeGtx0LubkXk"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"espace","param":null,"prefetchHints":4192,"slots":{"children":{"name":"lecture","param":null,"prefetchHints":4192,"slots":{"children":{"name":"coran","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}}}},"staleTime":300,"buildId":"0rVTF2S9Aybs7HcsjSVeD"}
