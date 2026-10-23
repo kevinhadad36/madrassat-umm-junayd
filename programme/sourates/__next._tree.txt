@@ -4,4 +4,4 @@
 :HL["/madrassat-umm-junayd/illustrations/sourates-huwa.webp","image"]
 :HL["/madrassat-umm-junayd/illustrations/sourates-allah.webp","image"]
 :HL["/madrassat-umm-junayd/illustrations/sourates-ahad.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"programme","param":null,"prefetchHints":4192,"slots":{"children":{"name":"sourates","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"kGYLBnRvGpChDUaPQqfKb"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"programme","param":null,"prefetchHints":4192,"slots":{"children":{"name":"sourates","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"hV65JWXKhrpGElwlp4tgp"}
