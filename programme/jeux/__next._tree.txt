@@ -1,7 +1,7 @@
-:HL["/madrassat-umm-junayd/_next/static/css/478d3c14c725a8b6.css","style"]
+:HL["/madrassat-umm-junayd/_next/static/css/66273a710f6fa6e4.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@500;600;700&display=swap","style"]
 :HL["/madrassat-umm-junayd/illustrations/jeux-fille-rayons.webp","image"]
 :HL["/madrassat-umm-junayd/illustrations/jeux-fille-etoile-1.webp","image"]
 :HL["/madrassat-umm-junayd/illustrations/jeux-fille-etoile-2.webp","image"]
 :HL["/madrassat-umm-junayd/illustrations/jeux-fille-etoile-3.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"programme","param":null,"prefetchHints":4192,"slots":{"children":{"name":"jeux","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"mORXIL47ZVGXq-LyGVjcP"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"programme","param":null,"prefetchHints":4192,"slots":{"children":{"name":"jeux","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"aMoe3_Qb15-vhmEHUpo-M"}
