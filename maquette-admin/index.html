@@ -6,357 +6,398 @@
 <meta name="robots" content="noindex">
 <title>Maquette de l'administration</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --fond:#fbf6ec; --carte:#fffdf8; --bord:#efe3c4; --encre:#2b2140; --doux:#6b5e55; --vert:#1f4d33; --vert2:#2c6a45; --vert-clair:#e6f1e6;
-  --rose:#fdecef; --rose-b:#f6cdd5; --rose-t:#c4475f;
-  --orange:#fff1dc; --orange-b:#f7d9a8; --orange-t:#b86a00;
-  --vertp:#eef6df; --vertp-b:#d6e8b8; --vertp-t:#4f8a1f;
-  --bleu:#e6f3fb; --bleu-b:#c4e2f3; --bleu-t:#2a7fb3;
-  --violet:#f4ebfb; --violet-b:#e0cdf3; --violet-t:#8a4fc0;
-  --jaune:#fff6d8; --jaune-b:#f6e3a1; --jaune-t:#a77500;
+  --fond:#fbf5ee; --carte:#fffdf9; --bord:#f0e6d8; --ombre:0 6px 18px rgba(120,90,60,.08);
+  --encre:#2b2333; --doux:#6f625a; --titre:#163d2c; --vert:#1d4f37; --vert2:#2c6a45; --bordeaux:#5a1f3a;
+  --rose:#fbe6ea; --rose-b:#f4ccd5; --rose-t:#c4566e;
+  --orange:#fdf0dc; --orange-b:#f5d9ae; --orange-t:#c27a12;
+  --vertp:#eaf3e2; --vertp-b:#d3e6c1; --vertp-t:#3f8a3a;
+  --bleu:#e6f1f8; --bleu-b:#c9e0ef; --bleu-t:#2f7aa8;
+  --violet:#f2eaf8; --violet-b:#dfcff0; --violet-t:#8656b8;
 }
 *{box-sizing:border-box}
 html,body{margin:0}
 body{background:var(--fond);color:var(--encre);font-family:Nunito,system-ui,sans-serif;font-weight:700;line-height:1.35}
 a{color:inherit}
-button{font:inherit;cursor:pointer}
-.bandeau{background:#fff3c4;border-bottom:2px solid #f2d77a;color:#6b4e00;text-align:center;font-size:13.5px;padding:7px 16px}
-.app{display:flex;min-height:calc(100vh - 34px)}
+button{font:inherit;cursor:pointer;color:inherit}
+h1,h2.serif{font-family:Fraunces,Georgia,serif;font-weight:700}
+.bandeau{background:#fff3c4;border:1.5px solid #f2d77a;border-radius:12px;color:#6b4e00;text-align:center;font-size:13px;padding:6px 12px;margin-bottom:16px}
+.app{display:flex;min-height:100vh}
 /* Menu latéral */
-.menu{width:262px;flex-shrink:0;background:var(--vert);color:#fff;padding:18px 14px 24px;position:sticky;top:0;height:100vh;overflow-y:auto;display:flex;flex-direction:column}
-.marque{text-align:center;margin-bottom:14px}
-.marque img{width:150px;height:auto;background:#fffdf8;border-radius:18px;padding:6px}
-.marque span{display:inline-block;margin-top:8px;background:#f7efdb;color:var(--vert);font-size:12.5px;font-weight:800;padding:3px 12px;border-radius:999px}
-.menu nav a{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:14px;text-decoration:none;font-size:15px;font-weight:800;color:#eaf3ea;margin-bottom:2px}
-.menu nav a:hover{background:rgba(255,255,255,.08)}
-.menu nav a.actif{background:#fbe9b5;color:var(--vert)}
-.menu nav svg{width:20px;height:20px;flex-shrink:0}
-.pastille{margin-left:auto;background:#f06a7e;color:#fff;font-size:12px;min-width:22px;height:22px;border-radius:999px;display:flex;align-items:center;justify-content:center;padding:0 6px}
-.retour{margin-top:auto;padding-top:16px;font-size:13.5px;color:#cfe3d2;text-align:center}
-.retour a{color:#fff}
+.menu{width:270px;flex-shrink:0;background:linear-gradient(180deg,#1d5139 0%,#174430 100%);color:#fff;padding:20px 14px 0;position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column}
+.marque{text-align:center;margin-bottom:18px}
+.marque .logo{background:#fffaf0;border-radius:22px;padding:10px 12px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.marque img{display:block;width:100%;height:auto}
+.marque span{display:inline-block;margin-top:12px;background:#f7ebcf;color:var(--vert);font-size:13px;font-weight:800;padding:5px 16px;border-radius:999px}
+.menu nav a{display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:16px;text-decoration:none;font-size:16px;font-weight:700;color:#eef5ee;margin-bottom:4px}
+.menu nav a:hover{background:rgba(255,255,255,.07)}
+.menu nav a.actif{background:#fbe8c4;color:var(--vert);font-weight:900;box-shadow:0 3px 10px rgba(0,0,0,.15)}
+.menu nav svg{width:22px;height:22px;flex-shrink:0}
+.deco{margin-top:auto;position:relative;height:170px;pointer-events:none}
+.deco svg{position:absolute;left:-14px;right:-14px;bottom:0;width:calc(100% + 28px);height:100%}
 /* Zone principale */
-.principal{flex:1;min-width:0;padding:22px 28px 48px}
-.entete{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:20px}
-.entete h1{margin:0;font-size:clamp(1.6rem,1.3rem+1.2vw,2.2rem);font-weight:900;color:var(--vert)}
-.entete p{margin:2px 0 0;color:var(--doux);font-size:15.5px;font-weight:700}
-.entete .droite{margin-left:auto;display:flex;gap:8px;align-items:center}
-.puce{white-space:nowrap;border:2px solid var(--bord);background:var(--carte);border-radius:14px;padding:8px 12px;font-size:14px;font-weight:800;display:flex;gap:8px;align-items:center}
+.principal{flex:1;min-width:0;padding:26px 30px 56px;position:relative}
+.entete{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+.entete h1{margin:0;font-size:clamp(1.7rem,1.3rem+1.4vw,2.5rem);color:var(--titre);line-height:1.1}
+.entete p{margin:4px 0 0;color:var(--doux);font-size:16px;font-weight:600}
+.entete .droite{margin-left:auto;display:flex;gap:10px;align-items:center}
+.rond{width:46px;height:46px;border-radius:999px;background:var(--carte);border:1.5px solid var(--bord);box-shadow:var(--ombre);display:flex;align-items:center;justify-content:center;position:relative}
+.rond .point{position:absolute;top:8px;right:9px;width:9px;height:9px;border-radius:99px;background:#ef7f94;border:2px solid #fff}
+.profil{display:flex;align-items:center;gap:10px;background:var(--carte);border:1.5px solid var(--bord);box-shadow:var(--ombre);border-radius:999px;padding:5px 14px 5px 5px;position:relative}
+.profil .av{width:36px;height:36px;border-radius:999px;background:#e9e1d8;display:flex;align-items:center;justify-content:center}
+.profil b{display:block;font-size:14.5px}.profil small{display:block;font-size:12.5px;color:var(--doux);font-weight:600}
+.deroule{display:none;position:absolute;right:0;top:calc(100% + 8px);background:var(--carte);border:1.5px solid var(--bord);border-radius:16px;box-shadow:var(--ombre);min-width:200px;padding:6px;z-index:5}
+.deroule a{display:block;padding:10px 12px;border-radius:10px;text-decoration:none;font-size:14.5px}
+.deroule a:hover{background:var(--fond)}
+.profil.ouvert .deroule{display:block}
 .ouvrir{display:none}
-.grille{display:grid;gap:16px}
+.grille{display:grid;gap:18px}
 .g4{grid-template-columns:repeat(4,minmax(0,1fr))}
 .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
-.carte{background:var(--carte);border:2px solid var(--bord);border-radius:22px;box-shadow:0 3px 0 var(--bord);padding:16px 18px}
-.chiffre{display:flex;align-items:center;gap:14px;border-radius:22px;padding:16px 18px;border:2px solid;box-shadow:0 3px 0 var(--b)}
-.chiffre .ic{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.chiffre b{display:block;font-size:30px;font-weight:900;line-height:1}
-.chiffre small{display:block;font-size:14px;color:var(--doux);margin-top:3px}
-.titre-carte{display:flex;align-items:center;gap:12px}
-.titre-carte h2{margin:0;font-size:20px;font-weight:900}
-.titre-carte p{margin:2px 0 0;font-size:14px;color:var(--doux)}
-.titre-carte .fl{margin-left:auto;width:38px;height:38px;border-radius:999px;background:#fff;display:flex;align-items:center;justify-content:center;border:2px solid var(--bord);text-decoration:none;flex-shrink:0}
-.trio{display:grid;grid-template-columns:repeat(3,1fr);margin-top:14px;background:rgba(255,255,255,.7);border-radius:16px;padding:10px 4px}
-.trio div{text-align:center;padding:2px 6px;border-left:2px solid rgba(0,0,0,.06)}
-.trio div:first-child{border-left:0}
-.trio b{font-size:24px;font-weight:900;display:block}
-.trio small{font-size:13.5px;color:var(--doux)}
-.liste{list-style:none;margin:10px 0 0;padding:0}
-.liste li{display:flex;align-items:center;gap:10px;padding:10px 2px;border-top:2px solid #f4ecd9;font-size:15px}
+.carte{background:var(--carte);border:1.5px solid var(--bord);border-radius:24px;box-shadow:var(--ombre);padding:18px 20px}
+.chiffre{display:flex;align-items:center;gap:16px;border-radius:24px;padding:20px;border:1.5px solid;box-shadow:var(--ombre);position:relative;overflow:hidden}
+.chiffre .ic{width:50px;height:50px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.chiffre .ic svg{width:40px;height:40px}
+.chiffre b{display:block;font-family:Fraunces,Georgia,serif;font-size:34px;font-weight:700;line-height:1}
+.chiffre small{display:block;font-size:15px;color:var(--encre);margin-top:4px;font-weight:700}
+.parcours{position:relative;overflow:hidden;border-radius:26px;border:1.5px solid;box-shadow:var(--ombre);padding:22px 22px 0;min-height:230px;text-decoration:none;display:block}
+.parcours .haut{display:flex;align-items:flex-start;gap:16px;position:relative;z-index:1}
+.parcours .bulle{width:84px;height:84px;border-radius:999px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.parcours .bulle svg{width:44px;height:44px}
+.parcours h2{margin:6px 0 0;font-family:Fraunces,Georgia,serif;font-size:clamp(1.3rem,1.1rem+.8vw,1.75rem);line-height:1.15}
+.parcours p{margin:6px 0 0;font-size:15.5px;font-weight:600}
+.parcours .fl{margin-left:auto;width:44px;height:44px;border-radius:999px;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:var(--ombre);flex-shrink:0}
+.parcours .vague{position:absolute;left:0;right:0;bottom:0;height:120px}
+.parcours .illu{position:absolute;right:28px;bottom:10px;width:170px;height:auto;z-index:1}
+.titre-carte{display:flex;align-items:center;gap:14px}
+.titre-carte h2{margin:0;font-size:22px;font-weight:900;color:var(--bordeaux)}
+.titre-carte .ic{width:34px;height:34px;color:#d08a1e;flex-shrink:0}
+.liste{list-style:none;margin:12px 0 0;padding:0}
+.liste li{display:flex;align-items:center;gap:12px;padding:12px 4px;border-top:1.5px solid #f3ebdf;font-size:16px}
 .liste li:first-child{border-top:0}
-.liste .q{margin-left:auto;color:var(--doux);font-size:13.5px;white-space:nowrap}
-.tag{display:inline-block;border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:800;white-space:nowrap}
-.t-auto{background:var(--vertp);color:var(--vertp-t);border:1.5px solid var(--vertp-b)}
-.t-acc{background:var(--rose);color:var(--rose-t);border:1.5px solid var(--rose-b)}
+.liste .q{margin-left:auto;color:var(--doux);font-size:14.5px;white-space:nowrap;font-weight:600}
+.liste .pers{width:24px;height:24px;color:var(--vert2);flex-shrink:0}
+.liste a{display:flex;align-items:center;gap:12px;width:100%;text-decoration:none}
+.nb{min-width:44px;height:36px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900}
+.ic-rond{width:44px;height:44px;border-radius:999px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ic-rond svg{width:22px;height:22px}
+.tag{display:inline-block;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:700;white-space:nowrap}
+.t-auto{background:var(--vertp);color:#2f5f2c;border:1px solid var(--vertp-b)}
+.t-acc{background:var(--rose);color:#9c3550;border:1px solid var(--rose-b)}
 .t-ok{background:#e3f4e4;color:#2f7a3a}
 .t-att{background:#fff0d6;color:#a86200}
 .t-ko{background:#fde4e4;color:#c03434}
 .t-gris{background:#f1ece2;color:#6b5e55}
-.lien{color:var(--vert2);font-weight:900;text-decoration:none;font-size:14.5px}
-.btn{display:inline-flex;align-items:center;gap:6px;background:var(--vert2);color:#fff;border:0;border-radius:14px;padding:10px 16px;font-weight:900;font-size:14.5px;box-shadow:0 3px 0 #1c4a2f;text-decoration:none}
-.btn.clair{background:var(--carte);color:var(--vert);border:2px solid var(--bord);box-shadow:0 3px 0 var(--bord)}
-.onglets{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 14px}
-.onglets button{border:2px solid var(--bord);background:var(--carte);border-radius:999px;padding:7px 14px;font-weight:800;font-size:14px;color:var(--encre)}
+.lien{color:var(--vert2);font-weight:800;text-decoration:none;font-size:15px;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;gap:6px;background:var(--vert2);color:#fff;border:0;border-radius:14px;padding:11px 18px;font-weight:800;font-size:15px;box-shadow:0 3px 0 #1c4a2f;text-decoration:none}
+.btn svg{width:18px;height:18px}
+.btn.clair{background:var(--carte);color:var(--vert);border:1.5px solid var(--bord);box-shadow:var(--ombre)}
+.onglets{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 14px}
+.onglets button{border:1.5px solid var(--bord);background:var(--carte);border-radius:999px;padding:8px 16px;font-weight:800;font-size:14.5px}
 .onglets button.actif{background:var(--vert2);border-color:var(--vert2);color:#fff}
-.outils{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
-.outils input,.outils select{border:2px solid var(--bord);background:var(--carte);border-radius:12px;padding:9px 12px;font:inherit;font-size:14.5px;min-width:0}
-.outils input{flex:1 1 220px}
-table{width:100%;border-collapse:collapse;font-size:14.5px}
-th{text-align:left;color:var(--doux);font-size:13px;font-weight:800;padding:8px 10px;border-bottom:2px solid var(--bord);white-space:nowrap}
-td{padding:10px;border-bottom:2px solid #f4ecd9;vertical-align:middle}
+.outils{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.outils input,.outils select{border:1.5px solid var(--bord);background:var(--carte);border-radius:14px;padding:10px 14px;font:inherit;font-size:15px;font-weight:600;min-width:0}
+.outils input{flex:1 1 240px}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{text-align:left;color:var(--doux);font-size:13px;font-weight:800;padding:8px 12px;border-bottom:1.5px solid var(--bord);white-space:nowrap}
+td{padding:12px;border-bottom:1.5px solid #f3ebdf;vertical-align:middle}
 tr:last-child td{border-bottom:0}
-.tableau{overflow-x:auto}
-.groupe{border-radius:20px;border:2px solid;padding:14px 16px;box-shadow:0 3px 0 var(--b)}
-.groupe h3{margin:0;font-size:18px;font-weight:900;display:flex;align-items:center;gap:8px}
-.groupe .h{font-size:14px;color:var(--doux);margin-top:2px}
-.places{margin-left:auto;font-size:13px;font-weight:900;background:#fff;border-radius:999px;padding:3px 10px}
-.eleves{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.eleves span{background:#fff;border-radius:999px;padding:4px 10px;font-size:13.5px;display:inline-flex;gap:6px;align-items:center}
+tr.clic{cursor:pointer}
+tr.clic:hover td{background:#fdf8f1}
+.tableau{overflow-x:auto;padding:8px 10px}
+.groupe{border-radius:22px;border:1.5px solid;padding:16px 18px;box-shadow:var(--ombre)}
+.groupe h3{margin:0;font-size:18px;font-weight:900;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.groupe .h{font-size:14.5px;color:var(--doux);margin-top:3px;font-weight:600}
+.places{margin-left:auto;font-size:13px;font-weight:800;background:#fff;border-radius:999px;padding:4px 11px}
+.eleves{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.eleves span{background:#fff;border-radius:999px;padding:5px 11px;font-size:14px;display:inline-flex;gap:6px;align-items:center}
 .eleves span i{font-style:normal;color:var(--doux);font-size:12px}
 .actions-g{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-.actions-g button{background:#fff;border:2px solid rgba(0,0,0,.08);border-radius:10px;padding:5px 10px;font-size:13px;font-weight:800}
-.semaine{display:grid;grid-template-columns:110px 1fr;gap:10px;align-items:start}
-.semaine .j{font-weight:900;padding-top:8px}
-.creneaux{display:flex;flex-wrap:wrap;gap:8px}
-.creneau{border-radius:14px;border:2px solid;padding:8px 12px;font-size:13.5px;min-width:150px}
-.creneau b{display:block;font-size:14.5px}
-.note{background:#f1f7e6;border:2px dashed #c9e4a0;border-radius:18px;padding:12px 14px;font-size:14.5px;color:#3d5a26}
-.note.att{background:#fff8e6;border-color:#f2d77a;color:#6b4e00}
-.vide{color:var(--doux);font-size:14.5px;padding:10px 2px}
-.barres{display:flex;align-items:flex-end;gap:14px;height:170px;padding:10px 6px 0;border-bottom:2px solid var(--bord)}
-.barres div{flex:1;border-radius:10px 10px 0 0;background:#b9dc8e;position:relative}
+.actions-g button{background:#fff;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:6px 11px;font-size:13.5px;font-weight:800}
+.semaine{display:grid;grid-template-columns:110px 1fr;gap:12px;align-items:start;margin-bottom:12px}
+.semaine .j{font-weight:900;padding-top:10px}
+.creneaux{display:flex;flex-wrap:wrap;gap:10px}
+.creneau{border-radius:16px;border:1.5px solid;padding:10px 14px;font-size:14px;min-width:170px;font-weight:600}
+.creneau b{display:block;font-size:15px;font-weight:900}
+.note{background:#f1f7e9;border:1.5px dashed #c9e2ad;border-radius:18px;padding:13px 16px;font-size:14.5px;color:#3d5a26;font-weight:600;margin-top:16px}
+.note.att{background:#fff8e8;border-color:#f0d78f;color:#6b4e00}
+.barres{display:flex;align-items:flex-end;gap:14px;height:170px;padding:24px 6px 0;border-bottom:1.5px solid var(--bord)}
+.barres div{flex:1;border-radius:10px 10px 0 0;background:#bfdea0;position:relative}
 .barres div span{position:absolute;top:-22px;left:0;right:0;text-align:center;font-size:13px}
 .axe{display:flex;gap:14px;padding:6px 6px 0}
 .axe span{flex:1;text-align:center;font-size:12.5px;color:var(--doux)}
-.repart{height:20px;border-radius:999px;overflow:hidden;display:flex;margin:12px 0 8px}
-.section-t{font-size:19px;font-weight:900;margin:24px 0 10px}
-.fiche-lignes div{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-top:2px solid #f4ecd9;font-size:14.5px}
-.fiche-lignes div:first-child{border-top:0}
-.fiche-lignes span{color:var(--doux)}
+.repart{height:20px;border-radius:999px;overflow:hidden;display:flex;margin:14px 0 10px}
+.lignes div{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-top:1.5px solid #f3ebdf;font-size:15px}
+.lignes div:first-child{border-top:0}
+.lignes span{color:var(--doux);font-weight:600}
+.retour{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:var(--vert2);font-weight:800;font-size:15px;margin-bottom:14px}
+.enfant{border-radius:22px;border:1.5px solid;padding:16px 18px;box-shadow:var(--ombre)}
+.enfant .tete{display:flex;align-items:center;gap:12px}
+.enfant .av{width:48px;height:48px;border-radius:999px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;flex-shrink:0}
+.enfant h3{margin:0;font-size:19px;font-weight:900}
+.enfant .sous{font-size:14px;color:var(--doux);font-weight:600}
+.enfant .lignes{margin-top:10px;background:rgba(255,255,255,.65);border-radius:14px;padding:2px 12px}
+.enfant .lignes div{font-size:14px;padding:8px 0}
+.mini-btn{background:#fff;border:1.5px solid var(--bord);border-radius:12px;padding:8px 12px;font-size:14px;font-weight:800;text-decoration:none;display:inline-block}
+.titre-section{font-size:20px;font-weight:900;margin:26px 0 12px;color:var(--titre)}
+.fond-vague{position:fixed;left:270px;right:0;bottom:0;height:90px;pointer-events:none;z-index:-1}
 .calque{display:none}
-@media (max-width:1100px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:820px){
+@media (max-width:1180px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:860px){
   .menu{position:fixed;z-index:30;left:0;top:0;transform:translateX(-100%);transition:transform .2s}
-  body.menu-ouvert .menu{box-shadow:6px 0 24px rgba(0,0,0,.2)}
-  body.menu-ouvert .menu{transform:none}
+  body.menu-ouvert .menu{transform:none;box-shadow:6px 0 24px rgba(0,0,0,.2)}
   body.menu-ouvert .calque{display:block;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:20}
-  .ouvrir{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:14px;border:2px solid var(--bord);background:var(--carte)}
-  .principal{padding:14px 16px 40px}
+  .ouvrir{display:flex}
+  .principal{padding:16px 16px 48px}
   .g2{grid-template-columns:1fr}
-  .entete .droite .masque{display:none}
+  .profil .txt{display:none}
+  .profil{padding:5px}
   .semaine{grid-template-columns:1fr}
-  .semaine .j{padding-top:4px}
+  .fond-vague{left:0}
+  .entete .droite{order:-1;margin-left:auto}
+  .entete .ouvrir{order:-2;margin-right:auto}
+  .entete .bloc{flex-basis:100%}
 }
 @media (max-width:520px){
-  .g4,.g3{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-  .chiffre{padding:12px;gap:10px;flex-direction:column;align-items:flex-start}
-  .chiffre b{font-size:26px}
-  .trio b{font-size:21px}
-  .trio small{font-size:12.5px}
+  .g4,.g3{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .chiffre{padding:14px;gap:8px;flex-direction:column;align-items:flex-start}
+  .chiffre b{font-size:28px}.chiffre small{font-size:14px}
+  .chiffre .ic{width:auto;height:auto}.chiffre .ic svg{width:32px;height:32px}
+  .parcours{min-height:210px;padding:18px 16px 0}
+  .parcours .bulle{width:60px;height:60px}.parcours .bulle svg{width:32px;height:32px}
+  .parcours .illu{width:120px;right:14px}
   .creneau{min-width:0;flex:1 1 100%}
-  /* Tableaux en fiches sur téléphone */
+  .enfants-g{grid-template-columns:1fr}
+  .liste li{font-size:15px}
   table.fiches thead{display:none}
-  table.fiches tr{display:block;border:2px solid var(--bord);border-radius:16px;padding:8px 12px;margin-bottom:10px;background:var(--carte)}
-  table.fiches td{display:flex;justify-content:space-between;gap:10px;border:0;padding:5px 0}
-  table.fiches td::before{content:attr(data-l);color:var(--doux);font-size:13px}
+  table.fiches tr{display:block;border:1.5px solid var(--bord);border-radius:18px;padding:8px 12px;margin-bottom:10px;background:var(--carte)}
+  table.fiches td{display:flex;justify-content:space-between;gap:10px;border:0;padding:6px 0}
+  table.fiches td::before{content:attr(data-l);color:var(--doux);font-size:13px;font-weight:600}
+  .tableau{padding:0;background:none;border:0;box-shadow:none}
 }
 </style>
 </head>
 <body>
-<div class="bandeau">Maquette de la nouvelle administration · les noms et les chiffres sont des <b>exemples</b>, pas les vraies données</div>
 <div class="calque" onclick="document.body.classList.remove('menu-ouvert')"></div>
+<svg class="fond-vague" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50 C200 10 380 80 600 45 S1000 20 1200 55 V90 H0z" fill="#f6e7d3" opacity=".7"/></svg>
 <div class="app">
   <aside class="menu" id="menu">
-    <div class="marque"><img src="logo-complet.webp" alt="La Madrassa d'Umm Junayd"><br><span>Espace administrateur</span></div>
+    <div class="marque">
+      <div class="logo"><img src="logo-officiel.webp" alt="La Madrassa d'Umm Junayd" width="640" height="362"></div>
+      <span>Espace administrateur</span>
+    </div>
     <nav id="nav"></nav>
-    <div class="retour">Voir le site comme une famille :<br><a href="#">Espace élève →</a></div>
+    <div class="deco" aria-hidden="true">
+      <svg viewBox="0 0 300 170" preserveAspectRatio="xMidYMax meet">
+        <path d="M0 140 C60 110 120 150 180 130 S270 110 300 120 V170 H0z" fill="#f3c9cf" opacity=".9"/>
+        <g fill="#f7dcb4"><path d="M95 170V110c0-30 25-46 55-62 30 16 55 32 55 62v60z"/><rect x="138" y="30" width="24" height="12" rx="6"/></g>
+        <path d="M150 20a8 8 0 1 0 6 13 10 10 0 1 1-6-13z" fill="#f7ebcf"/>
+        <g fill="#f0c98f"><rect x="118" y="130" width="14" height="40" rx="7"/><rect x="143" y="122" width="14" height="48" rx="7"/><rect x="168" y="130" width="14" height="40" rx="7"/></g>
+        <g fill="#a9c97a"><path d="M30 170c0-40 10-70 28-88-4 30-10 60-28 88z"/><path d="M48 170c8-30 26-50 44-58-12 22-24 42-44 58z"/><path d="M270 170c0-40-10-70-28-88 4 30 10 60 28 88z"/><path d="M252 170c-8-30-26-50-44-58 12 22 24 42 44 58z"/></g>
+      </svg>
+    </div>
   </aside>
-  <main class="principal" id="page"></main>
+  <main class="principal"><div class="bandeau">Maquette finale · les noms et les chiffres sont des <b>exemples</b>, pas les vraies données</div><div id="page"></div></main>
 </div>
 <script>
 const I={
  maison:'<path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/>',
- groupe:'<circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.6"/><path d="M3 19c.6-3.3 3-5 6-5s5.4 1.7 6 5M15 14.2c2.6-.3 4.8 1 5.5 4.3"/>',
+ groupe:'<circle cx="8.5" cy="8" r="3.2"/><circle cx="16.5" cy="8.5" r="2.8"/><path d="M2.5 19.5c.4-3.6 2.9-5.6 6-5.6s5.6 2 6 5.6zM14.6 14.3c3-.6 6.3 1 6.9 5.2h-5.3"/>',
  ordi:'<rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/>',
- dossier:'<path d="M7 3h7l5 5v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5M9 13h6M9 17h6"/>',
- carte:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/>',
- cal:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
- eleves:'<circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 19c.5-3 2.8-4.6 6-4.6S13.5 16 14 19M10 19c.5-3 2.8-4.6 6-4.6s5.5 1.6 6 4.6"/>',
- bulle:'<path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/>',
- stats:'<path d="M5 20V12M10 20V6M15 20v-9M20 20V9"/>',
- livre:'<path d="M4 5c3-1 6-1 8 1 2-2 5-2 8-1v14c-3-1-6-1-8 1-2-2-5-2-8-1z"/><path d="M12 6v14"/>',
- reglage:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>',
- alerte:'<path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17h.01"/>',
+ carte:'<rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3 10h18M7 15h4"/>',
+ stats:'<path d="M5 20v-7M10 20V6M15 20v-9M20 20V9"/>',
+ reglage:'<circle cx="12" cy="12" r="3"/><path d="M12 2.5v2.6M12 18.9v2.6M4.6 4.6l1.9 1.9M17.5 17.5l1.9 1.9M2.5 12h2.6M18.9 12h2.6M4.6 19.4l1.9-1.9M17.5 6.5l1.9-1.9"/>',
+ dossier:'<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 3h6v3H9zM8.5 11h.01M11 11h5M8.5 15h.01M11 15h5"/>',
+ cloche:'<path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20a2 2 0 0 0 4 0"/>',
+ lune:'<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>',
+ pers:'<circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/>',
  plus:'<path d="M12 5v14M5 12h14"/>',
- fleche:'<path d="m9 6 6 6-6 6"/>'
+ fleche:'<path d="m9 6 6 6-6 6"/>',
+ gauche:'<path d="m15 6-6 6 6 6"/>',
+ bas:'<path d="m6 9 6 6 6-6"/>',
+ menu:'<path d="M4 7h16M4 12h16M4 17h16"/>',
+ livre:'<path d="M4 5c3-1 6-1 8 1 2-2 5-2 8-1v14c-3-1-6-1-8 1-2-2-5-2-8-1z"/><path d="M12 6v14"/>',
+ micro:'<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/>',
+ feuille:'<path d="M5 19C5 10 11 5 20 4c0 9-5 15-14 15z"/><path d="M5 19 13 11"/>'
 };
-const svg=(k,c='currentColor',w=2.2)=>`<svg viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${I[k]}</svg>`;
-const RUB=[
- ['tableau','Tableau de bord','maison'],
- ['accompagne','Parcours accompagné','groupe'],
- ['autonome','Parcours autonome','ordi'],
- ['inscriptions','Inscriptions','dossier',3],
- ['paiements','Abonnements & paiements','carte'],
- ['planning','Planning & groupes','cal'],
- ['eleves','Tous les élèves','eleves'],
- ['messages','Messages & demandes','bulle',4],
- ['stats','Statistiques','stats'],
- ['cours','Cours & audios','livre'],
- ['parametres','Paramètres','reglage']
-];
-const P={
- rose:['var(--rose)','var(--rose-b)','var(--rose-t)'],orange:['var(--orange)','var(--orange-b)','var(--orange-t)'],
- vert:['var(--vertp)','var(--vertp-b)','var(--vertp-t)'],bleu:['var(--bleu)','var(--bleu-b)','var(--bleu-t)'],
- violet:['var(--violet)','var(--violet-b)','var(--violet-t)'],jaune:['var(--jaune)','var(--jaune-b)','var(--jaune-t)']
-};
-const chiffre=(n,l,ic,c)=>`<div class="chiffre" style="background:${P[c][0]};border-color:${P[c][1]};--b:${P[c][1]}"><span class="ic" style="background:#fff;color:${P[c][2]}">${svg(ic)}</span><span><b>${n}</b><small>${l}</small></span></div>`;
-const entete=(t,s,extra='')=>`<div class="entete"><button class="ouvrir" aria-label="Ouvrir le menu" onclick="document.body.classList.add('menu-ouvert')">${svg('eleves','#1f4d33').replace(I.eleves,'<path d="M4 7h16M4 12h16M4 17h16"/>')}</button><div><h1>${t}</h1><p>${s}</p></div><div class="droite">${extra}</div></div>`;
+const svg=(k,c='currentColor',w=2)=>`<svg viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[k]}</svg>`;
+const plein=(k,c)=>`<svg viewBox="0 0 24 24" fill="${c}" stroke="${c}" stroke-width="1" stroke-linejoin="round" aria-hidden="true">${I[k]}</svg>`;
+const RUB=[['tableau','Tableau de bord','maison'],['accompagne','Parcours accompagné','groupe'],['autonome','Parcours autonome','ordi'],['paiements','Abonnements & paiements','carte'],['stats','Statistiques','stats'],['parametres','Paramètres','reglage']];
+const P={rose:['var(--rose)','var(--rose-b)','var(--rose-t)'],orange:['var(--orange)','var(--orange-b)','var(--orange-t)'],vert:['var(--vertp)','var(--vertp-b)','var(--vertp-t)'],bleu:['var(--bleu)','var(--bleu-b)','var(--bleu-t)'],violet:['var(--violet)','var(--violet-b)','var(--violet-t)']};
+const tag=(t,k)=>`<span class="tag ${k}">${t}</span>`;
+const parcours=a=>a?tag('Parcours autonome','t-auto'):tag('Parcours accompagné','t-acc');
+const chiffre=(n,l,ic,c,remplir=true)=>`<div class="chiffre" style="background:linear-gradient(135deg,${P[c][0]},#fffdf9 140%);border-color:${P[c][1]}"><span class="ic" style="color:${P[c][2]}">${remplir?plein(ic,P[c][2]):svg(ic,P[c][2],2.2)}</span><span><b>${n}</b><small>${l}</small></span></div>`;
+const entete=(t,s,extra='')=>`<div class="entete"><button class="rond ouvrir" aria-label="Ouvrir le menu" onclick="document.body.classList.add('menu-ouvert')">${svg('menu','#1d4f37',2.4).replace('<svg','<svg width="22" height="22"')}</button><div class="bloc"><h1>${t}</h1><p>${s}</p></div><div class="droite">${extra}<button class="rond" aria-label="Mode sombre">${svg('lune','#6b4a1e').replace('<svg','<svg width="22" height="22"')}</button><a class="rond" href="#tableau" aria-label="2 actions à traiter">${svg('cloche','#6b4a1e').replace('<svg','<svg width="22" height="22"')}<span class="point"></span></a><div class="profil" onclick="this.classList.toggle('ouvert')"><span class="av">${plein('pers','#b9aea4').replace('<svg','<svg width="24" height="24"')}</span><span class="txt"><b>Umm Junayd</b><small>Administrateur</small></span>${svg('bas','#2b2333',2.4).replace('<svg','<svg width="18" height="18"')}<div class="deroule"><a href="#">Voir l'espace élève</a><a href="#parametres">Mon compte</a><a href="#">Se déconnecter</a></div></div></div></div>`;
 const GROUPES=[
  {c:'rose',n:'Groupe rose',j:'Samedi',h:'10:00 – 11:00',p:5,e:['Yasmine','Inès','Adam','Soumaya','Bilal']},
  {c:'orange',n:'Groupe orange',j:'Samedi',h:'11:05 – 12:05',p:5,e:['Aya','Ilyes','Maryam','Sofia']},
  {c:'vert',n:'Groupe vert',j:'Dimanche',h:'10:00 – 11:00',p:5,e:['Hanna','Youssef','Assia']},
  {c:'bleu',n:'Groupe bleu',j:'Dimanche',h:'11:05 – 12:05',p:5,e:['Rayan','Lina']}
 ];
-const tag=(t,k)=>`<span class="tag ${k}">${t}</span>`;
-const parcours=a=>a?tag('Parcours autonome','t-auto'):tag('Parcours accompagné','t-acc');
+const FAMILLES={
+ benali:{parent:'Samira Benali',email:'s.benali@exemple.fr',ins:'12 nov. 2026',formule:'Parcours autonome · 5,90 € / mois',compte:['Actif','t-ok'],abo:['Actif','t-ok'],enfants:[{p:'Ilyes',a:'8 ans',g:'garçon',c:'12 nov.',acces:['Accès ouvert','t-ok'],d:'Hier'},{p:'Nour',a:'6 ans',g:'fille',c:'12 nov.',acces:['Accès ouvert','t-ok'],d:"Aujourd'hui"}]},
+ haddad:{parent:'Karim Haddad',email:'k.haddad@exemple.fr',ins:'11 nov. 2026',formule:'Parcours autonome · 5,90 € / mois',compte:['E-mail à confirmer','t-att'],abo:['En attente','t-att'],enfants:[{p:'Adam',a:'9 ans',g:'garçon',c:'11 nov.',acces:['En attente du règlement','t-att'],d:'—'},{p:'Sara',a:'7 ans',g:'fille',c:'11 nov.',acces:['En attente du règlement','t-att'],d:'—'},{p:'Iyad',a:'4 ans',g:'garçon',c:'11 nov.',acces:['En attente du règlement','t-att'],d:'—'}]},
+ mansour:{parent:'Leïla Mansour',email:'l.mansour@exemple.fr',ins:'2 nov. 2026',formule:'Parcours autonome · 5,90 € / mois',compte:['Actif','t-ok'],abo:['Actif','t-ok'],enfants:[{p:'Rania',a:'—',g:'fille',c:'2 nov.',acces:['Accès ouvert','t-ok'],d:'Il y a 3 jours'}]}
+};
+const COUL_ENF=['bleu','rose','vert','orange','violet'];
+const vague=(c1,c2)=>`<svg class="vague" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70 C120 30 250 100 380 60 S560 30 600 50 V120 H0z" fill="${c1}"/><path d="M0 95 C150 70 300 115 450 85 S580 80 600 90 V120 H0z" fill="${c2}"/></svg>`;
+const ordiIllu=`<svg class="illu" viewBox="0 0 170 100" aria-hidden="true"><path d="M38 8h100a6 6 0 0 1 6 6v62H32V14a6 6 0 0 1 6-6z" fill="#2f7a46"/><rect x="40" y="16" width="96" height="54" rx="3" fill="#dff0e3"/><path d="M48 60 75 34l18 16 14-10 22 20z" fill="#b9dcb8"/><path d="M14 78h148l-10 14H24z" fill="#3a8a52"/><rect x="70" y="80" width="36" height="4" rx="2" fill="#2a6b3e"/></svg>`;
 
 const PAGES={
-tableau:()=>entete('Tableau de bord','Vue d\'ensemble de La Madrassa d\'Umm Junayd',`<span class="puce masque">${svg('cal','#1f4d33')} Ce mois-ci</span>`)+`
+tableau:()=>entete('Bonjour Umm Junayd <span style="color:#8cbf5a">'+svg('feuille','#8cbf5a',2).replace('<svg','<svg width="34" height="34" style="vertical-align:-4px"')+'</span>','Voici un aperçu de votre activité à La Madrassa.')+`
 <div class="grille g4">
- ${chiffre(29,'Élèves au total','eleves','vert')}
- ${chiffre(14,'Parcours accompagné','groupe','rose')}
- ${chiffre(15,'Parcours autonome','ordi','bleu')}
- ${chiffre(4,'Groupes actifs','cal','jaune')}
+ ${chiffre(29,'Élèves au total','groupe','vert')}
+ ${chiffre(14,'Élèves accompagnés','groupe','rose')}
+ ${chiffre(15,'Enfants autonomes','ordi','vert',false)}
+ ${chiffre(4,'Groupes actifs','groupe','orange')}
 </div>
-<div class="grille g2" style="margin-top:16px">
- <div class="carte" style="background:var(--rose);border-color:var(--rose-b);box-shadow:0 3px 0 var(--rose-b)">
-  <div class="titre-carte"><span class="chiffre" style="padding:0;border:0;box-shadow:none"><span class="ic" style="background:#fff;color:var(--rose-t)">${svg('groupe')}</span></span><div><h2>Parcours accompagné</h2><p>Apprentissage avec l'enseignante</p></div><a class="fl" href="#accompagne" aria-label="Ouvrir le parcours accompagné">${svg('fleche','#c4475f',3)}</a></div>
-  <div class="trio"><div><b>4</b><small>Groupes</small></div><div><b>14</b><small>Élèves</small></div><div><b>6</b><small>Places libres</small></div></div>
- </div>
- <div class="carte" style="background:var(--vertp);border-color:var(--vertp-b);box-shadow:0 3px 0 var(--vertp-b)">
-  <div class="titre-carte"><span class="chiffre" style="padding:0;border:0;box-shadow:none"><span class="ic" style="background:#fff;color:var(--vertp-t)">${svg('ordi')}</span></span><div><h2>Parcours autonome</h2><p>Apprentissage en autonomie sur la plateforme</p></div><a class="fl" href="#autonome" aria-label="Ouvrir le parcours autonome">${svg('fleche','#4f8a1f',3)}</a></div>
-  <div class="trio"><div><b>7</b><small>Familles</small></div><div><b>15</b><small>Enfants</small></div><div><b>6</b><small>Abonnements actifs</small></div></div>
- </div>
+<div class="grille g2" style="margin-top:20px">
+ <a class="parcours" href="#accompagne" style="background:linear-gradient(160deg,#fbe1e6,#fdf1f2);border-color:var(--rose-b)">
+  <div class="haut"><span class="bulle" style="background:#f6cfd7">${plein('groupe','#c4566e')}</span><div><h2 style="color:#5a1f3a">Parcours accompagné</h2><p>Groupes, élèves et organisation des cours</p></div><span class="fl">${svg('fleche','#5a1f3a',2.6).replace('<svg','<svg width="22" height="22"')}</span></div>
+  ${vague('#f8d3da','#f4c3cd')}<img class="illu" src="livre.webp" alt="">
+ </a>
+ <a class="parcours" href="#autonome" style="background:linear-gradient(160deg,#e3f0d9,#f3f8ec);border-color:var(--vertp-b)">
+  <div class="haut"><span class="bulle" style="background:#d3e8c4">${svg('ordi','#2f7a46',2.2)}</span><div><h2 style="color:#163d2c">Parcours autonome</h2><p>Familles, profils enfants et abonnements</p></div><span class="fl">${svg('fleche','#163d2c',2.6).replace('<svg','<svg width="22" height="22"')}</span></div>
+  ${vague('#d6eac6','#c4e0ad')}${ordiIllu}
+ </a>
 </div>
-<div class="grille g2" style="margin-top:16px">
+<div class="grille g2" style="margin-top:20px">
  <div class="carte">
-  <div class="titre-carte"><h2>Inscriptions récentes</h2><a class="lien" style="margin-left:auto" href="#inscriptions">Voir tout →</a></div>
+  <div class="titre-carte"><span class="ic">${svg('dossier','#d08a1e',2)}</span><h2>Inscriptions récentes</h2><a class="lien" style="margin-left:auto" href="#inscriptions">Voir toutes →</a></div>
   <ul class="liste">
-   <li>Famille Benali ${parcours(true)}<span class="q">Il y a 2 h</span></li>
-   <li>Famille Diallo ${parcours(false)}<span class="q">Hier</span></li>
-   <li>Famille Haddad ${parcours(true)}<span class="q">11 nov.</span></li>
+   <li><span class="pers">${svg('pers','#2c6a45')}</span><b>Fatima M.</b> ${parcours(true)}<span class="q">Il y a 2 h</span></li>
+   <li><span class="pers">${svg('pers','#2c6a45')}</span><b>Amina B.</b> ${parcours(false)}<span class="q">Il y a 4 h</span></li>
+   <li><span class="pers">${svg('pers','#2c6a45')}</span><b>Sofiane A.</b> ${parcours(true)}<span class="q">Hier</span></li>
   </ul>
  </div>
  <div class="carte">
-  <div class="titre-carte"><span style="color:#d08a00;width:28px;height:28px;display:flex">${svg('alerte')}</span><h2>Actions à traiter</h2></div>
+  <div class="titre-carte"><span class="ic">${svg('cloche','#d08a1e',2)}</span><h2>Actions à traiter</h2></div>
   <ul class="liste">
-   <li><a class="lien" style="color:var(--encre)" href="#inscriptions">3 demandes d'inscription à traiter</a><span class="q">${svg('fleche','#6b5e55',3).replace('<svg','<svg width="18" height="18"')}</span></li>
-   <li><a class="lien" style="color:var(--encre)" href="#paiements">2 règlements à vérifier</a><span class="q">${svg('fleche','#6b5e55',3).replace('<svg','<svg width="18" height="18"')}</span></li>
-   <li><a class="lien" style="color:var(--encre)" href="#messages">1 lecture du Coran à écouter</a><span class="q">${svg('fleche','#6b5e55',3).replace('<svg','<svg width="18" height="18"')}</span></li>
+   <li><a href="#inscriptions"><span class="ic-rond" style="background:var(--rose)">${svg('dossier','#c4566e')}</span><span class="nb" style="background:var(--rose);color:#9c3550">3</span>Demandes d'inscription en attente<span class="q">${svg('fleche','#2b2333',2.6).replace('<svg','<svg width="20" height="20"')}</span></a></li>
+   <li><a href="#paiements"><span class="ic-rond" style="background:var(--orange)">${svg('carte','#c27a12')}</span><span class="nb" style="background:var(--orange);color:#a86200">2</span>Paiements à vérifier<span class="q">${svg('fleche','#2b2333',2.6).replace('<svg','<svg width="20" height="20"')}</span></a></li>
   </ul>
  </div>
 </div>`,
 
-accompagne:()=>entete('Parcours accompagné','Les groupes, le planning de la semaine et les élèves avec l\'enseignante',`<a class="btn" href="#">${svg('plus','#fff',3).replace('<svg','<svg width="18" height="18"')} Ajouter un groupe</a>`)+`
-<div class="grille g3">${chiffre(14,'Élèves accompagnés','eleves','rose')}${chiffre(4,'Groupes actifs','groupe','orange')}${chiffre(6,'Places disponibles','cal','vert')}</div>
-<div class="onglets" style="margin-top:18px" data-o><button class="actif">Groupes</button><button>Planning</button><button>Élèves</button></div>
-<div class="grille g2">${GROUPES.map(g=>`
- <div class="groupe" style="background:${P[g.c][0]};border-color:${P[g.c][1]};--b:${P[g.c][1]}">
-  <h3><span style="width:12px;height:12px;border-radius:99px;background:${P[g.c][2]}"></span>${g.n}<span class="places" style="color:${P[g.c][2]}">${g.e.length}/${g.p} · ${g.p-g.e.length} place${g.p-g.e.length>1?'s':''} libre${g.p-g.e.length>1?'s':''}</span></h3>
-  <div class="h">${g.j} · ${g.h}</div>
-  <div class="eleves">${g.e.map(e=>`<span>${e} <i title="Déplacer">⇄</i></span>`).join('')}</div>
-  <div class="actions-g"><button>+ Ajouter un élève</button><button>Modifier jours et horaires</button><button>Dupliquer</button><button>Archiver</button></div>
- </div>`).join('')}</div>
-<div class="note" style="margin-top:16px">⇄ <b>Déplacer un élève</b> : on touche son prénom et on choisit le nouveau groupe. Son compte, sa fiche de suivi et sa progression restent intacts.</div>
-<h2 class="section-t">Les élèves accompagnés</h2>
-<div class="carte tableau"><table class="fiches"><thead><tr><th>Élève</th><th>Famille</th><th>Groupe</th><th>Fiche de suivi</th></tr></thead><tbody>
- <tr><td data-l="Élève">Yasmine</td><td data-l="Famille">Famille Diallo</td><td data-l="Groupe">${tag('Rose','t-acc')}</td><td data-l="Fiche"><a class="lien" href="#">Ouvrir la fiche →</a></td></tr>
- <tr><td data-l="Élève">Aya</td><td data-l="Famille">Famille Kone</td><td data-l="Groupe"><span class="tag" style="background:var(--orange);color:var(--orange-t)">Orange</span></td><td data-l="Fiche"><a class="lien" href="#">Ouvrir la fiche →</a></td></tr>
- <tr><td data-l="Élève">Hanna</td><td data-l="Famille">Famille Saïd</td><td data-l="Groupe">${tag('Vert','t-auto')}</td><td data-l="Fiche"><a class="lien" href="#">Ouvrir la fiche →</a></td></tr>
-</tbody></table></div>`,
-
-autonome:()=>entete('Parcours autonome','Les familles qui apprennent sur la plateforme, sans cours avec l\'enseignante',`<a class="btn" href="#inscriptions">Créer un lien d'inscription</a>`)+`
-<div class="grille g3">
- ${chiffre(7,'Familles inscrites','groupe','vert')}${chiffre(15,'Enfants inscrits','eleves','bleu')}${chiffre(6,'Abonnements actifs','carte','jaune')}
- ${chiffre(2,'Nouvelles ce mois-ci','plus','violet')}${chiffre(1,'Comptes en attente','alerte','orange')}${chiffre(0,'Suspendus ou résiliés','carte','rose')}
-</div>
-<div class="onglets" style="margin-top:18px" data-o><button class="actif">Familles</button><button>Enfants</button><button>Abonnements</button></div>
-<div class="outils"><input placeholder="Rechercher une famille ou une adresse e-mail"><select><option>Tous les statuts</option><option>Actif</option><option>En attente</option><option>Suspendu</option><option>Résilié</option></select></div>
-<div class="carte tableau"><table class="fiches"><thead><tr><th>Parent</th><th>Adresse e-mail</th><th>Inscription</th><th>Enfants</th><th>Formule</th><th>Compte</th><th>Abonnement</th></tr></thead><tbody>
- <tr><td data-l="Parent">Samira Benali</td><td data-l="E-mail">s.benali@exemple.fr</td><td data-l="Inscription">12 nov.</td><td data-l="Enfants">2</td><td data-l="Formule">5,90 € / mois</td><td data-l="Compte">${tag('Actif','t-ok')}</td><td data-l="Abonnement">${tag('Actif','t-ok')}</td></tr>
- <tr><td data-l="Parent">Karim Haddad</td><td data-l="E-mail">k.haddad@exemple.fr</td><td data-l="Inscription">11 nov.</td><td data-l="Enfants">3</td><td data-l="Formule">5,90 € / mois</td><td data-l="Compte">${tag('E-mail à confirmer','t-att')}</td><td data-l="Abonnement">${tag('En attente','t-att')}</td></tr>
- <tr><td data-l="Parent">Leïla Mansour</td><td data-l="E-mail">l.mansour@exemple.fr</td><td data-l="Inscription">2 nov.</td><td data-l="Enfants">1</td><td data-l="Formule">5,90 € / mois</td><td data-l="Compte">${tag('Actif','t-ok')}</td><td data-l="Abonnement">${tag('Actif','t-ok')}</td></tr>
-</tbody></table></div>
-<div class="note" style="margin-top:14px">En touchant une famille : sa fiche (parent, enfants avec âge et date de création, formule, statut), et les boutons qui existent déjà : <b>changer la formule</b>, <b>réinitialiser le mot de passe</b>, <b>supprimer</b>. Nouveau : <b>suspendre / réactiver</b> l'accès.</div>`,
-
-inscriptions:()=>entete('Inscriptions','Toutes les demandes, des deux parcours')+`
-<div class="onglets" data-o><button class="actif">Toutes (6)</button><button>À traiter (3)</button><button>Validées (2)</button><button>Refusées (1)</button></div>
+inscriptions:()=>`<a class="retour" href="#tableau">${svg('gauche','#2c6a45',2.6).replace('<svg','<svg width="18" height="18"')} Tableau de bord</a>`+entete('Toutes les inscriptions','Les demandes des deux parcours')+`
+<div class="onglets" style="margin-top:0" data-o><button class="actif">Toutes (6)</button><button>En attente (3)</button><button>Validées (2)</button><button>Refusées (1)</button></div>
 <div class="outils"><select><option>Les deux parcours</option><option>Parcours accompagné</option><option>Parcours autonome</option></select><input placeholder="Rechercher un nom"></div>
-<div class="carte tableau"><table class="fiches"><thead><tr><th>Famille</th><th>Parcours</th><th>Enfants</th><th>Date</th><th>Statut</th><th></th></tr></thead><tbody>
- <tr><td data-l="Famille">Famille Benali</td><td data-l="Parcours">${parcours(true)}</td><td data-l="Enfants">2 (6 et 8 ans)</td><td data-l="Date">13 nov.</td><td data-l="Statut">${tag('À traiter','t-att')}</td><td data-l=""><a class="lien" href="#">Voir →</a></td></tr>
- <tr><td data-l="Famille">Famille Diallo</td><td data-l="Parcours">${parcours(false)}</td><td data-l="Enfants">1 (5 ans)</td><td data-l="Date">12 nov.</td><td data-l="Statut">${tag('À traiter','t-att')}</td><td data-l=""><a class="lien" href="#">Voir →</a></td></tr>
- <tr><td data-l="Famille">Famille Kone</td><td data-l="Parcours">${parcours(false)}</td><td data-l="Enfants">2 (4 et 7 ans)</td><td data-l="Date">10 nov.</td><td data-l="Statut">${tag('Validée','t-ok')}</td><td data-l=""><a class="lien" href="#">Voir →</a></td></tr>
- <tr><td data-l="Famille">Famille Mansour</td><td data-l="Parcours">${parcours(true)}</td><td data-l="Enfants">1 (9 ans)</td><td data-l="Date">2 nov.</td><td data-l="Statut">${tag('Validée','t-ok')}</td><td data-l=""><a class="lien" href="#">Voir →</a></td></tr>
+<div class="carte tableau"><table class="fiches"><thead><tr><th>Famille</th><th>Parcours</th><th>Enfants</th><th>Date</th><th>Statut</th></tr></thead><tbody>
+ <tr><td data-l="Famille">Fatima M.</td><td data-l="Parcours">${parcours(true)}</td><td data-l="Enfants">2 (6 et 8 ans)</td><td data-l="Date">13 nov.</td><td data-l="Statut">${tag('En attente','t-att')}</td></tr>
+ <tr><td data-l="Famille">Amina B.</td><td data-l="Parcours">${parcours(false)}</td><td data-l="Enfants">1 (5 ans)</td><td data-l="Date">13 nov.</td><td data-l="Statut">${tag('En attente','t-att')}</td></tr>
+ <tr><td data-l="Famille">Sofiane A.</td><td data-l="Parcours">${parcours(true)}</td><td data-l="Enfants">1 (7 ans)</td><td data-l="Date">12 nov.</td><td data-l="Statut">${tag('En attente','t-att')}</td></tr>
+ <tr><td data-l="Famille">Famille Kone</td><td data-l="Parcours">${parcours(false)}</td><td data-l="Enfants">2 (4 et 7 ans)</td><td data-l="Date">10 nov.</td><td data-l="Statut">${tag('Validée','t-ok')}</td></tr>
 </tbody></table></div>
-<div class="grille g2" style="margin-top:16px">
- <div class="note"><b>Parcours accompagné</b> : la demande remplie sur la page Inscription est gardée ici, puis WhatsApp s'ouvre comme aujourd'hui. Boutons : <b>Créer le compte</b>, <b>Refuser</b>, <b>Répondre sur WhatsApp</b>.</div>
- <div class="note"><b>Parcours autonome</b> : on crée le lien d'inscription (comme aujourd'hui), on voit s'il est en attente, utilisé ou expiré, et la famille créée avec.</div>
+<div class="note">Cette liste s'ouvre depuis le tableau de bord (« Voir toutes »). Les demandes arrivent aussi par <b>e-mail</b>. Parcours accompagné : bouton <b>Créer le compte</b>. Parcours autonome : le lien d'inscription, comme aujourd'hui.</div>`,
+
+accompagne:()=>entete('Parcours accompagné','Groupes, élèves et organisation des cours')+`
+<div class="grille g3">${chiffre(14,'Élèves accompagnés','groupe','rose')}${chiffre(4,'Groupes actifs','groupe','orange')}${chiffre(6,'Places disponibles','plus','vert',false)}</div>
+<div class="onglets" data-o="acc"><button class="actif" data-v="groupes">Groupes</button><button data-v="planning">Planning de la semaine</button><button data-v="eleves">Élèves</button></div>
+<div data-vue="groupes">
+ <div style="display:flex;justify-content:flex-end;margin-bottom:12px"><a class="btn" href="#">${svg('plus','#fff',3)} Ajouter un groupe</a></div>
+ <div class="grille g2">${GROUPES.map(g=>`
+  <div class="groupe" style="background:${P[g.c][0]};border-color:${P[g.c][1]}">
+   <h3><span style="width:12px;height:12px;border-radius:99px;background:${P[g.c][2]}"></span>${g.n}<span class="places" style="color:${P[g.c][2]}">${g.e.length}/${g.p} · ${g.p-g.e.length} place${g.p-g.e.length>1?'s':''} libre${g.p-g.e.length>1?'s':''}</span></h3>
+   <div class="h">${g.j} · ${g.h}</div>
+   <div class="eleves">${g.e.map(e=>`<span>${e} <i title="Déplacer">⇄</i></span>`).join('')}</div>
+   <div class="actions-g"><button>+ Ajouter un élève</button><button>Jours et horaires</button><button>Dupliquer</button><button>Archiver</button></div>
+  </div>`).join('')}</div>
+ <div class="note">⇄ <b>Déplacer un élève</b> : on touche son prénom et on choisit le nouveau groupe. Son compte, sa fiche de suivi et sa progression restent intacts.</div>
+</div>
+<div data-vue="planning" hidden>
+ <div class="carte">${['Samedi','Dimanche'].map(j=>`<div class="semaine"><div class="j">${j}</div><div class="creneaux">${GROUPES.filter(g=>g.j===j).map(g=>`<div class="creneau" style="background:${P[g.c][0]};border-color:${P[g.c][1]}"><b>${g.n}</b>${g.h} · ${g.e.length}/${g.p} élèves</div>`).join('')}</div></div>`).join('')}</div>
+ <div class="note">Le planning actuel est gardé avec toutes ses fonctions (jours, horaires, élèves, remarque), rangé ici.</div>
+</div>
+<div data-vue="eleves" hidden>
+ <div class="outils"><input placeholder="Rechercher un élève ou une famille"></div>
+ <div class="carte tableau"><table class="fiches"><thead><tr><th>Élève</th><th>Âge</th><th>Famille</th><th>Groupe</th><th></th></tr></thead><tbody>
+  <tr><td data-l="Élève">Yasmine</td><td data-l="Âge">6 ans</td><td data-l="Famille">Amina B.</td><td data-l="Groupe">${tag('Rose','t-acc')}</td><td data-l=""><a class="lien" href="#">Fiche de suivi →</a></td></tr>
+  <tr><td data-l="Élève">Aya</td><td data-l="Âge">7 ans</td><td data-l="Famille">Famille Kone</td><td data-l="Groupe"><span class="tag" style="background:var(--orange);color:#a86200">Orange</span></td><td data-l=""><a class="lien" href="#">Fiche de suivi →</a></td></tr>
+  <tr><td data-l="Élève">Hanna</td><td data-l="Âge">—</td><td data-l="Famille">Famille Saïd</td><td data-l="Groupe">${tag('Vert','t-auto')}</td><td data-l=""><a class="lien" href="#">Fiche de suivi →</a></td></tr>
+ </tbody></table></div>
 </div>`,
 
-paiements:()=>entete('Abonnements & paiements','Le suivi des règlements, en attendant le paiement en ligne',`<a class="btn" href="#">${svg('plus','#fff',3).replace('<svg','<svg width="18" height="18"')} Noter un règlement</a>`)+`
-<div class="grille g4">${chiffre(6,'Abonnements actifs','carte','vert')}${chiffre(2,'Règlements à vérifier','alerte','orange')}${chiffre(0,'Échoués','carte','rose')}${chiffre(1,'Résiliés','carte','violet')}</div>
-<div class="onglets" style="margin-top:18px" data-o><button class="actif">Parcours autonome</button><button>Parcours accompagné</button><button>Historique</button></div>
-<div class="carte tableau"><table class="fiches"><thead><tr><th>Famille</th><th>Montant</th><th>Moyen</th><th>Date</th><th>Mois réglé</th><th>Statut</th></tr></thead><tbody>
- <tr><td data-l="Famille">Famille Benali</td><td data-l="Montant">5,90 €</td><td data-l="Moyen">Wero</td><td data-l="Date">12 nov.</td><td data-l="Mois">Novembre</td><td data-l="Statut">${tag('Confirmé','t-ok')}</td></tr>
- <tr><td data-l="Famille">Famille Haddad</td><td data-l="Montant">5,90 €</td><td data-l="Moyen">Virement</td><td data-l="Date">11 nov.</td><td data-l="Mois">Novembre</td><td data-l="Statut">${tag('À vérifier','t-att')}</td></tr>
- <tr><td data-l="Famille">Famille Mansour</td><td data-l="Montant">5,90 €</td><td data-l="Moyen">Wero</td><td data-l="Date">3 nov.</td><td data-l="Mois">Novembre</td><td data-l="Statut">${tag('Confirmé','t-ok')}</td></tr>
-</tbody></table></div>
-<div class="note att" style="margin-top:14px">Registre <b>manuel</b> : c'est l'enseignante qui note chaque règlement reçu par Wero ou virement (montant, date, mois). Aucune information bancaire n'est enregistrée. La place est prête pour Stripe plus tard (prochaine échéance, paiements automatiques).</div>`,
-
-planning:()=>entete('Planning & groupes','La semaine des cours du parcours accompagné')+`
-<div class="carte">
- ${['Samedi','Dimanche'].map(j=>`<div class="semaine" style="margin-bottom:12px"><div class="j">${j}</div><div class="creneaux">${GROUPES.filter(g=>g.j===j).map(g=>`<div class="creneau" style="background:${P[g.c][0]};border-color:${P[g.c][1]}"><b>${g.n}</b>${g.h} · ${g.e.length}/${g.p} élèves</div>`).join('')}</div></div>`).join('')}
+autonome:()=>entete('Parcours autonome','Familles, profils enfants et abonnements')+`
+<div class="grille g3">
+ ${chiffre(7,'Familles inscrites','groupe','vert')}${chiffre(15,'Enfants inscrits','pers','bleu')}${chiffre(6,'Abonnements actifs','carte','orange',false)}
+ ${chiffre(2,'Nouvelles ce mois-ci','plus','violet',false)}${chiffre(1,'Compte en attente','cloche','orange',false)}${chiffre(0,'Suspendus ou résiliés','carte','rose',false)}
 </div>
-<div class="note" style="margin-top:14px">La page actuelle du planning est gardée avec toutes ses fonctions (jours, horaires, élèves, remarque), en plus lisible. Elle n'est plus la page d'arrivée de l'admin.</div>`,
-
-eleves:()=>entete('Tous les élèves','Tous les enfants de la Madrassa, des deux parcours')+`
-<div class="outils"><input placeholder="Rechercher un prénom ou un parent"><select><option>Les deux parcours</option><option>Parcours accompagné</option><option>Parcours autonome</option></select></div>
-<div class="carte tableau"><table class="fiches"><thead><tr><th>Prénom</th><th>Âge</th><th>Parent</th><th>Parcours</th><th>Groupe</th><th>Créé le</th></tr></thead><tbody>
- <tr><td data-l="Prénom">Yasmine</td><td data-l="Âge">6 ans</td><td data-l="Parent">Famille Diallo</td><td data-l="Parcours">${parcours(false)}</td><td data-l="Groupe">Rose</td><td data-l="Créé le">4 oct.</td></tr>
- <tr><td data-l="Prénom">Ilyes</td><td data-l="Âge">8 ans</td><td data-l="Parent">Samira Benali</td><td data-l="Parcours">${parcours(true)}</td><td data-l="Groupe">—</td><td data-l="Créé le">12 nov.</td></tr>
- <tr><td data-l="Prénom">Sofia</td><td data-l="Âge">—</td><td data-l="Parent">Famille Kone</td><td data-l="Parcours">${parcours(false)}</td><td data-l="Groupe">Orange</td><td data-l="Créé le">10 nov.</td></tr>
+<h2 class="titre-section">Les familles</h2>
+<div class="outils"><input placeholder="Rechercher une famille, un enfant ou une adresse e-mail"><select><option>Tous les statuts</option><option>Actif</option><option>En attente</option><option>Suspendu</option><option>Résilié</option></select></div>
+<div class="carte tableau"><table class="fiches"><thead><tr><th>Parent</th><th>Adresse e-mail</th><th>Inscription</th><th>Enfants</th><th>Compte</th><th>Abonnement</th><th></th></tr></thead><tbody>
+ ${Object.entries(FAMILLES).map(([id,f])=>`<tr class="clic" onclick="location.hash='famille/${id}'"><td data-l="Parent"><b>${f.parent}</b></td><td data-l="E-mail">${f.email}</td><td data-l="Inscription">${f.ins.replace(' 2026','')}</td><td data-l="Enfants">${f.enfants.length} profil${f.enfants.length>1?'s':''}</td><td data-l="Compte">${tag(...f.compte)}</td><td data-l="Abonnement">${tag(...f.abo)}</td><td data-l=""><a class="lien" href="#famille/${id}">Voir la famille →</a></td></tr>`).join('')}
 </tbody></table></div>
-<div class="note" style="margin-top:14px">Un annuaire pour <b>retrouver</b> un enfant. Chaque parcours garde sa propre gestion : en touchant un enfant, on arrive sur sa page dans son parcours. « — » quand l'âge n'a pas été renseigné.</div>`,
+<div class="note">Un compte parent = une famille. En touchant une famille, on voit <b>tous les profils de ses enfants</b>.</div>`,
 
-messages:()=>entete('Messages & demandes','Ce qui attend une réponse de l\'enseignante')+`
-<div class="onglets" data-o><button class="actif">Tout (4)</button><button>Inscriptions</button><button>Lectures du Coran</button><button>Comptes</button></div>
-<div class="carte"><ul class="liste">
- <li>${tag('Inscription','t-att')} Famille Diallo demande une place (parcours accompagné)<span class="q">Hier</span></li>
- <li>${tag('Lecture','t-auto')} Yasmine a envoyé sa lecture de la page 582<span class="q">Hier</span></li>
- <li>${tag('Compte','t-gris')} Famille Haddad n'a pas encore confirmé son adresse e-mail<span class="q">11 nov.</span></li>
- <li>${tag('Inscription','t-att')} Famille Benali : lien d'inscription pas encore utilisé<span class="q">10 nov.</span></li>
-</ul></div>
-<div class="note" style="margin-top:14px">Pas de nouvelle messagerie : on répond toujours par <b>WhatsApp</b> ou par <b>e-mail</b>, avec un bouton qui ouvre la conversation déjà prête.</div>`,
-
-stats:()=>entete('Statistiques','L\'évolution de la Madrassa',`<span class="puce">${svg('cal','#1f4d33')} 6 derniers mois</span>`)+`
+famille:(id)=>{const f=FAMILLES[id]||FAMILLES.benali;return `<a class="retour" href="#autonome">${svg('gauche','#2c6a45',2.6).replace('<svg','<svg width="18" height="18"')} Parcours autonome</a>`+entete(f.parent,`Famille · ${f.enfants.length} profil${f.enfants.length>1?'s':''} enfant${f.enfants.length>1?'s':''}`)+`
 <div class="grille g2">
- <div class="carte"><h2 style="margin:0 0 18px;font-size:18px">Nouvelles inscriptions par mois</h2>
+ <div class="carte"><h2 style="margin:0 0 8px;font-size:19px;font-weight:900;color:var(--titre)">Le compte parent</h2>
+  <div class="lignes"><div><span>Adresse e-mail</span><b>${f.email}</b></div><div><span>Inscrite le</span><b>${f.ins}</b></div><div><span>Formule</span><b>${f.formule}</b></div><div><span>Compte</span>${tag(...f.compte)}</div><div><span>Abonnement</span>${tag(...f.abo)}</div></div>
+ </div>
+ <div class="carte"><h2 style="margin:0 0 12px;font-size:19px;font-weight:900;color:var(--titre)">Actions</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:8px"><a class="mini-btn" href="#">Changer la formule</a><a class="mini-btn" href="#">Réinitialiser le mot de passe</a><a class="mini-btn" href="#">Suspendre l'accès</a><a class="mini-btn" href="#paiements">Voir les règlements</a><a class="mini-btn" href="#" style="color:#c03434">Supprimer la famille</a></div>
+  <p style="margin:12px 0 0;font-size:14px;color:var(--doux);font-weight:600">Les boutons qui existent déjà sont gardés. « Suspendre l'accès » est le seul nouveau.</p>
+ </div>
+</div>
+<h2 class="titre-section">Les profils des enfants (${f.enfants.length})</h2>
+<div class="grille g3 enfants-g">${f.enfants.map((e,i)=>{const c=P[COUL_ENF[i%5]];return `
+ <div class="enfant" style="background:${c[0]};border-color:${c[1]}">
+  <div class="tete"><span class="av" style="color:${c[2]}">${e.p[0]}</span><div><h3>${e.p}</h3><div class="sous">${e.a==='—'?'Âge non renseigné':e.a} · ${e.g}</div></div></div>
+  <div class="lignes"><div><span>Profil créé le</span><b>${e.c}</b></div><div><span>Accès</span>${tag(...e.acces)}</div><div><span>Dernière activité</span><b>${e.d}</b></div></div>
+  <div style="margin-top:10px"><a class="mini-btn" href="#">Bilan de compétences →</a></div>
+ </div>`}).join('')}</div>`},
+
+paiements:()=>entete('Abonnements & paiements','Le suivi des règlements, en attendant le paiement en ligne')+`
+<div class="grille g4">${chiffre(6,'Abonnements actifs','carte','vert',false)}${chiffre(2,'Paiements à vérifier','cloche','orange',false)}${chiffre(0,'Paiements échoués','carte','rose',false)}${chiffre(1,'Résiliés','carte','violet',false)}</div>
+<div class="onglets" data-o><button class="actif">Parcours autonome</button><button>Parcours accompagné</button><button>Historique</button></div>
+<div style="display:flex;justify-content:flex-end;margin-bottom:12px"><a class="btn" href="#">${svg('plus','#fff',3)} Noter un règlement</a></div>
+<div class="carte tableau"><table class="fiches"><thead><tr><th>Famille</th><th>Montant</th><th>Moyen</th><th>Date</th><th>Mois réglé</th><th>Statut</th></tr></thead><tbody>
+ <tr><td data-l="Famille">Samira Benali</td><td data-l="Montant">5,90 €</td><td data-l="Moyen">Wero</td><td data-l="Date">12 nov.</td><td data-l="Mois">Novembre</td><td data-l="Statut">${tag('Confirmé','t-ok')}</td></tr>
+ <tr><td data-l="Famille">Karim Haddad</td><td data-l="Montant">5,90 €</td><td data-l="Moyen">Virement</td><td data-l="Date">11 nov.</td><td data-l="Mois">Novembre</td><td data-l="Statut">${tag('À vérifier','t-att')}</td></tr>
+ <tr><td data-l="Famille">Leïla Mansour</td><td data-l="Montant">5,90 €</td><td data-l="Moyen">Wero</td><td data-l="Date">3 nov.</td><td data-l="Mois">Novembre</td><td data-l="Statut">${tag('Confirmé','t-ok')}</td></tr>
+</tbody></table></div>
+<div class="note att">Registre <b>manuel</b> : l'enseignante note chaque règlement reçu par Wero ou virement (montant, date, mois). Aucune information bancaire n'est enregistrée. La place est prête pour Stripe plus tard.</div>`,
+
+stats:()=>entete('Statistiques','L\'évolution de La Madrassa')+`
+<div class="grille g2">
+ <div class="carte"><h2 style="margin:0 0 6px;font-size:19px;font-weight:900;color:var(--titre)">Nouvelles inscriptions par mois</h2>
+  <div class="outils" style="margin:8px 0 0"><select><option>6 derniers mois</option><option>12 derniers mois</option><option>Depuis le début</option></select></div>
   <div class="barres"><div style="height:20%"><span>2</span></div><div style="height:35%"><span>4</span></div><div style="height:45%"><span>5</span></div><div style="height:60%"><span>7</span></div><div style="height:80%"><span>9</span></div><div style="height:50%"><span>6</span></div></div>
   <div class="axe"><span>Juin</span><span>Juil.</span><span>Sept.</span><span>Oct.</span><span>Nov.</span><span>Déc.</span></div></div>
- <div class="carte"><h2 style="margin:0;font-size:18px">Répartition des enfants</h2>
-  <div class="repart"><span style="width:48%;background:#f7c3cd"></span><span style="width:52%;background:#c9e4a0"></span></div>
-  <p style="margin:0;font-size:14.5px">${tag('Accompagné · 14','t-acc')} ${tag('Autonome · 15','t-auto')}</p>
-  <div class="fiche-lignes" style="margin-top:14px"><div><span>Familles</span><b>18</b></div><div><span>Enfants</span><b>29</b></div><div><span>Abonnements autonomes actifs</span><b>6</b></div></div></div>
+ <div class="carte"><h2 style="margin:0;font-size:19px;font-weight:900;color:var(--titre)">Répartition des enfants</h2>
+  <div class="repart"><span style="width:48%;background:#f4c3cd"></span><span style="width:52%;background:#c4e0ad"></span></div>
+  <p style="margin:0">${tag('Accompagnés · 14','t-acc')} ${tag('Autonomes · 15','t-auto')}</p>
+  <div class="lignes" style="margin-top:14px"><div><span>Familles</span><b>18</b></div><div><span>Enfants</span><b>29</b></div><div><span>Abonnements autonomes actifs</span><b>6</b></div><div><span>Élèves accompagnés</span><b>14</b></div></div></div>
 </div>
-<div class="note att" style="margin-top:14px">Les courbes ne montrent que des vraies données. L'historique des abonnements et des effectifs commence le jour de la mise en ligne de cette page : avant, il n'était pas enregistré.</div>`,
+<div class="note att">Seulement des vraies données. L'historique des abonnements et des effectifs commence le jour de la mise en ligne : avant, il n'était pas enregistré.</div>`,
 
-cours:()=>entete('Cours & audios','Les supports de l\'enseignante')+`
+parametres:()=>entete('Paramètres','Réglages de l\'administration et supports de cours')+`
+<h2 class="titre-section" style="margin-top:0">Cours & audios</h2>
 <div class="grille g3">
- <a class="carte" href="#" style="text-decoration:none"><div class="titre-carte"><span class="chiffre" style="padding:0;border:0;box-shadow:none"><span class="ic" style="background:var(--bleu);color:var(--bleu-t)">${svg('livre')}</span></span><div><h2>Cours et fiches mémo</h2><p>PDF à présenter sur Zoom et à partager</p></div></div></a>
- <a class="carte" href="#" style="text-decoration:none"><div class="titre-carte"><span class="chiffre" style="padding:0;border:0;box-shadow:none"><span class="ic" style="background:var(--rose);color:var(--rose-t)">${svg('bulle')}</span></span><div><h2>Audios</h2><p>Lecture, sourates, consignes et sons des jeux</p></div></div></a>
- <a class="carte" href="#" style="text-decoration:none"><div class="titre-carte"><span class="chiffre" style="padding:0;border:0;box-shadow:none"><span class="ic" style="background:var(--jaune);color:var(--jaune-t)">${svg('dossier')}</span></span><div><h2>Récapitulatifs des cours</h2><p>Livrets PDF pour les enfants</p></div></div></a>
+ <a class="carte" href="#" style="text-decoration:none;display:flex;gap:14px;align-items:center"><span class="ic-rond" style="background:var(--bleu)">${svg('livre','#2f7aa8')}</span><span><b style="display:block;font-size:17px">Cours et fiches mémo</b><span style="font-size:14px;color:var(--doux);font-weight:600">PDF à présenter et à partager</span></span></a>
+ <a class="carte" href="#" style="text-decoration:none;display:flex;gap:14px;align-items:center"><span class="ic-rond" style="background:var(--rose)">${svg('micro','#c4566e')}</span><span><b style="display:block;font-size:17px">Audios</b><span style="font-size:14px;color:var(--doux);font-weight:600">Lecture, sourates, consignes, jeux</span></span></a>
+ <a class="carte" href="#" style="text-decoration:none;display:flex;gap:14px;align-items:center"><span class="ic-rond" style="background:var(--orange)">${svg('dossier','#c27a12')}</span><span><b style="display:block;font-size:17px">Récapitulatifs</b><span style="font-size:14px;color:var(--doux);font-weight:600">Livrets PDF pour les enfants</span></span></a>
 </div>
-<div class="note" style="margin-top:14px">Les pages actuelles (cours PDF, audios) sont reprises telles quelles, rangées ici.</div>`,
-
-parametres:()=>entete('Paramètres','Réglages de l\'administration')+`
+<h2 class="titre-section">Réglages</h2>
 <div class="grille g2">
- <div class="carte"><h2 style="margin:0 0 6px;font-size:18px">Formules et tarifs</h2><div class="fiche-lignes"><div><span>Parcours autonome</span><b>5,90 € / mois / famille</b></div><div><span>Parcours accompagné</span><b>20 € / mois / enfant</b></div></div><p class="vide">Lecture seule pour l'instant.</p></div>
- <div class="carte"><h2 style="margin:0 0 6px;font-size:18px">Groupes</h2><div class="fiche-lignes"><div><span>Places par groupe (par défaut)</span><b>5</b></div><div><span>Groupes archivés</span><b>0</b></div></div></div>
- <div class="carte"><h2 style="margin:0 0 6px;font-size:18px">Contact</h2><div class="fiche-lignes"><div><span>WhatsApp de l'enseignante</span><b>Déjà configuré</b></div><div><span>E-mails automatiques</span><b>Gmail, actifs</b></div></div></div>
- <div class="carte"><h2 style="margin:0 0 6px;font-size:18px">Mon compte administrateur</h2><p class="vide" style="padding-top:0">Changer le mot de passe de l'admin.</p></div>
+ <div class="carte"><h2 style="margin:0 0 6px;font-size:18px;font-weight:900">Formules et tarifs</h2><div class="lignes"><div><span>Parcours autonome</span><b>5,90 € / mois / famille</b></div><div><span>Parcours accompagné</span><b>20 € / mois / enfant</b></div></div></div>
+ <div class="carte"><h2 style="margin:0 0 6px;font-size:18px;font-weight:900">Groupes</h2><div class="lignes"><div><span>Places par groupe (par défaut)</span><b>5</b></div><div><span>Groupes archivés</span><b>0</b></div></div></div>
+ <div class="carte"><h2 style="margin:0 0 6px;font-size:18px;font-weight:900">E-mails</h2><div class="lignes"><div><span>Demandes et messages reçus sur</span><b>L'adresse de la Madrassa</b></div><div><span>E-mails automatiques</span><b>Actifs</b></div></div></div>
+ <div class="carte"><h2 style="margin:0 0 6px;font-size:18px;font-weight:900">Mon compte</h2><div class="lignes"><div><span>Mot de passe administrateur</span><a class="lien" href="#">Modifier →</a></div></div></div>
 </div>`
 };
 
-function nav(id){
-  document.getElementById('nav').innerHTML=RUB.map(([k,t,ic,n])=>`<a href="#${k}" class="${k===id?'actif':''}">${svg(ic)}<span>${t}</span>${n?`<span class="pastille">${n}</span>`:''}</a>`).join('');
-}
+const MENU_DE={inscriptions:'tableau',famille:'autonome'};
+function nav(id){document.getElementById('nav').innerHTML=RUB.map(([k,t,ic])=>`<a href="#${k}" class="${k===id?'actif':''}">${svg(ic)}<span>${t}</span></a>`).join('')}
 function aller(){
-  const id=(location.hash.slice(1)||'tableau');
-  const f=PAGES[id]||PAGES.tableau;
-  nav(PAGES[id]?id:'tableau');
-  document.getElementById('page').innerHTML=f();
-  document.querySelectorAll('[data-o]').forEach(o=>o.addEventListener('click',e=>{if(e.target.tagName!=='BUTTON')return;o.querySelectorAll('button').forEach(b=>b.classList.remove('actif'));e.target.classList.add('actif')}));
+  const [id,arg]=(location.hash.slice(1)||'tableau').split('/');
+  const f=PAGES[id]?id:'tableau';
+  nav(MENU_DE[f]||f);
+  document.getElementById('page').innerHTML=PAGES[f](arg);
+  document.querySelectorAll('[data-o]').forEach(o=>o.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;o.querySelectorAll('button').forEach(x=>x.classList.remove('actif'));b.classList.add('actif');if(b.dataset.v)document.querySelectorAll('[data-vue]').forEach(v=>v.hidden=v.dataset.vue!==b.dataset.v)}));
   document.body.classList.remove('menu-ouvert');
   window.scrollTo(0,0);
 }
