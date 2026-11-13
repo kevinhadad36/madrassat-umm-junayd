@@ -225,7 +225,7 @@ const I={
 };
 const svg=(k,c='currentColor',w=2)=>`<svg viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[k]}</svg>`;
 const plein=(k,c)=>`<svg viewBox="0 0 24 24" fill="${c}" stroke="${c}" stroke-width="1" stroke-linejoin="round" aria-hidden="true">${I[k]}</svg>`;
-const RUB=[['tableau','Tableau de bord','maison'],['accompagne','Parcours accompagné','groupe'],['autonome','Parcours autonome','ordi'],['paiements','Abonnements & paiements','carte'],['stats','Statistiques','stats'],['parametres','Paramètres','reglage']];
+const RUB=[['tableau','Tableau de bord','maison'],['accompagne','Parcours accompagné','groupe'],['autonome','Parcours autonome','ordi'],['paiements','Abonnements & paiements','carte'],['stats','Statistiques','stats'],['cours','Supports de cours','livre'],['parametres','Paramètres','reglage']];
 const P={rose:['var(--rose)','var(--rose-b)','var(--rose-t)'],orange:['var(--orange)','var(--orange-b)','var(--orange-t)'],vert:['var(--vertp)','var(--vertp-b)','var(--vertp-t)'],bleu:['var(--bleu)','var(--bleu-b)','var(--bleu-t)'],violet:['var(--violet)','var(--violet-b)','var(--violet-t)']};
 const tag=(t,k)=>`<span class="tag ${k}">${t}</span>`;
 const parcours=a=>a?tag('Parcours autonome','t-auto'):tag('Parcours accompagné','t-acc');
@@ -374,17 +374,17 @@ stats:()=>entete('Statistiques','L\'évolution de La Madrassa')+`
 </div>
 <div class="note att">Seulement des vraies données. L'historique des abonnements et des effectifs commence le jour de la mise en ligne : avant, il n'était pas enregistré.</div>`,
 
-parametres:()=>entete('Paramètres','Réglages de l\'administration et supports de cours')+`
-<h2 class="titre-section" style="margin-top:0">Cours & audios</h2>
+cours:()=>entete('Supports de cours','Cours, fiches mémo, audios et récapitulatifs')+`
 <div class="grille g3">
  <a class="carte" href="#" style="text-decoration:none;display:flex;gap:14px;align-items:center"><span class="ic-rond" style="background:var(--bleu)">${svg('livre','#2f7aa8')}</span><span><b style="display:block;font-size:17px">Cours et fiches mémo</b><span style="font-size:14px;color:var(--doux);font-weight:600">PDF à présenter et à partager</span></span></a>
  <a class="carte" href="#" style="text-decoration:none;display:flex;gap:14px;align-items:center"><span class="ic-rond" style="background:var(--rose)">${svg('micro','#c4566e')}</span><span><b style="display:block;font-size:17px">Audios</b><span style="font-size:14px;color:var(--doux);font-weight:600">Lecture, sourates, consignes, jeux</span></span></a>
  <a class="carte" href="#" style="text-decoration:none;display:flex;gap:14px;align-items:center"><span class="ic-rond" style="background:var(--orange)">${svg('dossier','#c27a12')}</span><span><b style="display:block;font-size:17px">Récapitulatifs</b><span style="font-size:14px;color:var(--doux);font-weight:600">Livrets PDF pour les enfants</span></span></a>
 </div>
-<h2 class="titre-section">Réglages</h2>
+<div class="note">Les pages actuelles (cours PDF, fiches mémo, audios) sont reprises telles quelles, rangées ici.</div>`,
+
+parametres:()=>entete('Paramètres','Réglages de l\'administration')+`
 <div class="grille g2">
  <div class="carte"><h2 style="margin:0 0 6px;font-size:18px;font-weight:900">Formules et tarifs</h2><div class="lignes"><div><span>Parcours autonome</span><b>5,90 € / mois / famille</b></div><div><span>Parcours accompagné</span><b>20 € / mois / enfant</b></div></div></div>
- <div class="carte"><h2 style="margin:0 0 6px;font-size:18px;font-weight:900">Groupes</h2><div class="lignes"><div><span>Places par groupe (par défaut)</span><b>5</b></div><div><span>Groupes archivés</span><b>0</b></div></div></div>
  <div class="carte"><h2 style="margin:0 0 6px;font-size:18px;font-weight:900">E-mails</h2><div class="lignes"><div><span>Demandes et messages reçus sur</span><b>L'adresse de la Madrassa</b></div><div><span>E-mails automatiques</span><b>Actifs</b></div></div></div>
  <div class="carte"><h2 style="margin:0 0 6px;font-size:18px;font-weight:900">Mon compte</h2><div class="lignes"><div><span>Mot de passe administrateur</span><a class="lien" href="#">Modifier →</a></div></div></div>
 </div>`
